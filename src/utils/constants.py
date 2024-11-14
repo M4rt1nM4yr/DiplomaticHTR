@@ -1,0 +1,4 @@
+BLANK = "Δ"
+PAD = "Φ"
+START_OF_SEQUENCE = "Α"
+END_OF_SEQUENCE = "Ω"

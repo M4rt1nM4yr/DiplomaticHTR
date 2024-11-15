@@ -177,6 +177,8 @@ if __name__ == "__main__":
     if x.is_cuda:
         tgt_key_padding_mask = tgt_key_padding_mask.cuda()
     tgt_mask = subsequent_mask(y.shape[1]).cuda()
+    
+    # Check training
     out = m(
         x=x,
         y=y,
@@ -185,6 +187,8 @@ if __name__ == "__main__":
         tgt_mask=tgt_mask,
     )
     print(out["predictions_s2s"].shape)
+    
+    # Check inference
     out = m.inference(
         x=x,
         img_width=x_widths,
